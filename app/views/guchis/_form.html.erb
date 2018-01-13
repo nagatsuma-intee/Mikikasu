@@ -1,0 +1,22 @@
+<%= form_with(model: guchi, local: true) do |form| %>
+  <% if guchi.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(guchi.errors.count, "error") %> prohibited this guchi from being saved:</h2>
+
+      <ul>
+      <% guchi.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :scream %>
+    <%= form.text_field :scream, id: :guchi_scream %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
